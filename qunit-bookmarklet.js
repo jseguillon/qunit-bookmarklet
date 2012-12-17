@@ -1,10 +1,46 @@
+function loadScript(url, callback)
+{
+	var head = document.getElementsByTagName("head")[0];
+	var script = document.createElement("script");
+	script.src = url;
+
+	// Attach handlers for all browsers
+	var done = false;
+	script.onload = script.onreadystatechange = function()
+	{
+		if( !done && ( !this.readyState 
+					|| this.readyState == "loaded" 
+					|| this.readyState == "complete") )
+		{
+			done = true;
+
+			// Continue your code
+			callback();
+
+			// Handle memory leak in IE
+			script.onload = script.onreadystatechange = null;
+			head.removeChild( script );
+		}
+	};
+
+	head.appendChild(script);
+}
+
+
+// Usage: 
+// This code loads jQuery and executes some code when jQuery is loaded
+loadScript("http://code.jquery.com/jquery-latest.js", function()
+{
+	$('my_element').hide();
+});
+
 //Add qunit divs
 $('body').append('<div id="qunit"></div><div id="qunit-fixture"></div>');
 //Add Qunit and jquery ui css
 $('head').append('<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-git.css" type="text/css" />');
 $('head').append('<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />');
 //Style qunit div : non 100% width and z-index to 32bits max int
-$('head').append('<style>#qunit { width: 300px; z-index: 2147483647; }</style>');
+$('head').append('<style>#qunit { width: 600px; z-index: 2147483647; position: fixed; top: 0; left: 0;}</style>');
 
  
 //Get Qunit
