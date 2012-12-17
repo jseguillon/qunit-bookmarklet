@@ -1,3 +1,8 @@
+var qunitUrl = 'http://code.jquery.com/qunit/qunit-git.js'; 
+var jqueryUrl = 'http://code.jquery.com/jquery-latest.js';
+var jqueryUiUrl = 'http://code.jquery.com/ui/1.9.2/jquery-ui.js';
+
+
 function loadScript(url, callback)
 {
 	var head = document.getElementsByTagName("head")[0];
@@ -30,7 +35,7 @@ function loadScript(url, callback)
 // Usage: 
 // This code loads jQuery and executes some code when jQuery is loaded
 // Jquery from Microsoft(r) CDN cause it supports https
-loadScript("https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js", function()
+loadScript(jqueryUrl, function()
 {
 	//Add qunit divs
 	$('body').append('<div id="qunit"></div><div id="qunit-fixture"></div>');
@@ -42,9 +47,9 @@ loadScript("https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js", functio
 
 	 
 	//Get Qunit
-	$.getScript('https://code.jquery.com/qunit/qunit-git.js').done(function(script, textStatus) {
+	$.getScript(qunitUrl).done(function(script, textStatus) {
 		//Get jquery UI to get draggable and resizable
-		$.getScript('https://code.jquery.com/ui/1.9.2/jquery-ui.js').done (function(script, textStatus) {
+		$.getScript(jqueryUiUrl).done (function(script, textStatus) {
 			//Init and start (but why ?) 
 			QUnit.init();QUnit.start();
 			$(function() {
