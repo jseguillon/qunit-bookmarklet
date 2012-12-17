@@ -19,7 +19,7 @@ $.getScript('http://code.jquery.com/qunit/qunit-git.js').done(function(script, t
 		
 		//Check if known script to run, based on local storage
 		if(typeof (localStorage.qunitScript) !== 'undefined') { $.getScript(localStorage.qunitScript); } 
-		else { console.log('No script to run, please add one using localStorage.qunitScript = \'scriptURL\' in your debug console. You still can test using qunit test() syntax.'); }
+		else { console.log("No script to run, please add one using localStorage.qunitScript = 'scriptURL' in your debug console. \n Example : localStorage.qunitScript='https://raw.github.com/jseguillon/qunit-bookmarklet/master/sample.js' \n You still can test using qunit test() syntax."); }
 		
 	});
 });
