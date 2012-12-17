@@ -19,17 +19,8 @@ $.getScript('http://code.jquery.com/qunit/qunit-git.js').done(function(script, t
 		
 		//Check if known script to run, based on local storage
 		if(typeof (localStorage.qunitScript) !== 'undefined') { $.getScript(localStorage.qunitScript); } 
-		else { console.log('no script to run, please add one using localStorage.qunitScript = \'scriptURL\' in your debug console. You still can test using qunit test() syntax.'); }
+		else { console.log('No script to run, please add one using localStorage.qunitScript = \'scriptURL\' in your debug console. You still can test using qunit test() syntax.'); }
 		
 	});
 });
 
-
-//$.getScript('http://qunitjs.com/resources/qunit.js').done(function(script, textStatus) {
-//$('body').append('<div><h1 id="qunit-header">Unit Tests</h1><h2 id="qunit-banner"></h2><div id="qunit-testrunner-toolbar"></div><ol id="qunit-tests"></ol><div id="qunit-fixture"></div>');
- //$.getScript('http://code.jquery.com/qunit/git/qunit.js', function () { 
- 
- 
- //setTimeout(function () { QUnit.init();QUnit.start();}, 1000);
-
-//$.getScript('http://code.jquery.com/qunit/qunit-git.js').done(function(script, textStatus) {
