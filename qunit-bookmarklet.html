@@ -2,9 +2,9 @@
 <body>
 
 Bookmark this link :
-
 <a class="bookmarklet" href="javascript:(function(){var%20qunitUrl='http://code.jquery.com/qunit/qunit-git.js';var%20jqueryUrl='http://code.jquery.com/jquery-latest.js';var%20jqueryUiUrl='http://code.jquery.com/ui/1.9.2/jquery-ui.js';var%20defaultScript='https://raw.github.com/jseguillon/qunit-bookmarklet/master/sample.js';function%20loadScript(url,callback){var%20head=document.getElementsByTagName('head')[0];var%20script=document.createElement('script');script.src=url;var%20done=false;script.onload=script.onreadystatechange=function(){if(!done%20%26%26(!this.readyState||%20this.readyState=='loaded'||%20this.readyState=='complete')){done=true;callback();script.onload=script.onreadystatechange=null;head.removeChild(script);}};head.appendChild(script);}loadScript(jqueryUrl,function(){$('body').append('%3Cdiv%20id=%22qunit%22%3E%3C/div%3E%3Cdiv%20id=%22qunit-fixture%22%3E%3C/div%3E');$('head').append('%3Clink%20rel=%22stylesheet%22%20href=%22http://code.jquery.com/qunit/qunit-git.css%22%20type=%22text/css%22%20/%3E');$('head').append('%3Clink%20rel=%22stylesheet%22%20href=%22http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css%22%20/%3E');$('head').append('%3Cstyle%3E%23qunit%20{%20width:%20600px;%20z-index:%202147483647;%20position:%20fixed;%20top:%200;%20left:%200;}%3C/style%3E');$.getScript(qunitUrl).done(function(script,textStatus){$.getScript(jqueryUiUrl).done(function(script,textStatus){QUnit.init();QUnit.start();$(function(){$(%22%23qunit%22).draggable().resizable({handles:%22e,%20w%22});;});if(typeof(localStorage.qunitScript)!=='undefined'){$.getScript(localStorage.qunitScript);}else{console.log(%22No%20script%20to%20run,%20please%20add%20one%20using%20localStorage.qunitScript%20=%20'scriptURL'%20in%20your%20debug%20console.%20\n%20Example%20:%20localStorage.qunitScript='https://raw.github.com/jseguillon/qunit-bookmarklet/master/sample.js'%20\n%20You%20still%20can%20test%20using%20qunit%20test()%20syntax.%22);$.getScript(defaultScript);}});});});})();">Qunit-bookmarklet</a>
 
+<br/>
 Then open any non https site and click.
 
 </body>
