@@ -1,7 +1,7 @@
 var qunitUrl = 'http://code.jquery.com/qunit/qunit-git.js'; 
 var jqueryUrl = 'http://code.jquery.com/jquery-latest.js';
 var jqueryUiUrl = 'http://code.jquery.com/ui/1.9.2/jquery-ui.js';
-
+var defaultScript = 'https://raw.github.com/jseguillon/qunit-bookmarklet/master/sample.js';
 
 function loadScript(url, callback)
 {
@@ -42,7 +42,7 @@ loadScript(jqueryUrl, function()
 	//Add Qunit and jquery ui css
 	$('head').append('<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-git.css" type="text/css" />');
 	$('head').append('<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />');
-	//Style qunit div : non 100% width and z-index to 32bits max int
+	//Style qunit div : non 100% width and z-index to 32bits max int and fixed position 
 	$('head').append('<style>#qunit { width: 600px; z-index: 2147483647; position: fixed; top: 0; left: 0;}</style>');
 
 	 
@@ -58,8 +58,10 @@ loadScript(jqueryUrl, function()
 			
 			//Check if known script to run, based on local storage
 			if(typeof (localStorage.qunitScript) !== 'undefined') { $.getScript(localStorage.qunitScript); } 
-			else { console.log("No script to run, please add one using localStorage.qunitScript = 'scriptURL' in your debug console. \n Example : localStorage.qunitScript='https://raw.github.com/jseguillon/qunit-bookmarklet/master/sample.js' \n You still can test using qunit test() syntax."); }
-			
+			else { 
+			console.log("No script to run, please add one using localStorage.qunitScript = 'scriptURL' in your debug console. \n Example : localStorage.qunitScript='https://raw.github.com/jseguillon/qunit-bookmarklet/master/sample.js' \n You still can test using qunit test() syntax."); 
+			 $.getScript(defaultScript);
+			}
 		});
 	});
 });
