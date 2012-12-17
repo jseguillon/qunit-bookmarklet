@@ -29,7 +29,7 @@ function loadScript(url, callback)
 
 // Usage: 
 // This code loads jQuery and executes some code when jQuery is loaded
-loadScript("http://code.jquery.com/jquery-latest.js", function()
+loadScript("https://code.jquery.com/jquery-latest.js", function()
 {
 	//Add qunit divs
 	$('body').append('<div id="qunit"></div><div id="qunit-fixture"></div>');
@@ -41,9 +41,9 @@ loadScript("http://code.jquery.com/jquery-latest.js", function()
 
 	 
 	//Get Qunit
-	$.getScript('http://code.jquery.com/qunit/qunit-git.js').done(function(script, textStatus) {
+	$.getScript('https://code.jquery.com/qunit/qunit-git.js').done(function(script, textStatus) {
 		//Get jquery UI to get draggable and resizable
-		$.getScript('http://code.jquery.com/ui/1.9.2/jquery-ui.js').done (function(script, textStatus) {
+		$.getScript('https://code.jquery.com/ui/1.9.2/jquery-ui.js').done (function(script, textStatus) {
 			//Init and start (but why ?) 
 			QUnit.init();QUnit.start();
 			$(function() {
