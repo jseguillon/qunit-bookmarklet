@@ -29,7 +29,8 @@ function loadScript(url, callback)
 
 // Usage: 
 // This code loads jQuery and executes some code when jQuery is loaded
-loadScript("https://code.jquery.com/jquery-latest.js", function()
+// Jquery from Microsoft(r) CDN cause it supports https
+loadScript("https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.min.js", function()
 {
 	//Add qunit divs
 	$('body').append('<div id="qunit"></div><div id="qunit-fixture"></div>');
