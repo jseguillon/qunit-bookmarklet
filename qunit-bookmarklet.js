@@ -5,8 +5,8 @@ var defaultScript = 'https://raw.github.com/jseguillon/qunit-bookmarklet/master/
 
 function loadScript(url, callback)
 {
-	var head = document.getElementsByTagName("head")[0];
-	var script = document.createElement("script");
+	var head = document.getElementsByTagName('head')[0];
+	var script = document.createElement('script');
 	script.src = url;
 
 	// Attach handlers for all browsers
@@ -14,8 +14,8 @@ function loadScript(url, callback)
 	script.onload = script.onreadystatechange = function()
 	{
 		if( !done && ( !this.readyState 
-					|| this.readyState == "loaded" 
-					|| this.readyState == "complete") )
+					|| this.readyState == 'loaded' 
+					|| this.readyState == 'complete') )
 		{
 			done = true;
 
@@ -65,6 +65,3 @@ loadScript(jqueryUrl, function()
 		});
 	});
 });
-
-
-
